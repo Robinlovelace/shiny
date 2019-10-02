@@ -42,6 +42,8 @@ server <- function(input, output) {
   # 1. It is "reactive" and therefore should be automatically
   #    re-executed when inputs (input$bins) change
   # 2. Its output type is a plot
+  if(interactive()) print("interactive")
+  print("non-interactive")
   output$distPlot <- renderPlot({
 
     x    <- faithful$waiting
